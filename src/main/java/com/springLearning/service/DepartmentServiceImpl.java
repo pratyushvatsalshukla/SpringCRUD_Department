@@ -57,8 +57,14 @@ public class DepartmentServiceImpl implements DepartmentService {
 		catch(Exception e) {
 			
 			e.printStackTrace();
-			return department ;
+			return department ; 
 		}
+	}
+
+	@Override
+	public Department getDepartmentByDepartmentName(String departmentName) {
+		Department departmentByName = departmentRepository.findByDepartmentName(departmentName) ;
+		return departmentByName;
 	}
 
 }

@@ -1,13 +1,10 @@
 package com.springLearning.entity;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Length;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 @Getter
@@ -19,8 +16,8 @@ public class Department {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long departmentId ;
 	
-	@NotBlank(message = "Please enter the department name")
-	@Length(max=5, min=1)
+	@NotEmpty(message = "Please enter the department name")
+	@Size(min=1, max=1,message="Please enter department name within size limits")
 	private String departmentName ;
 	private String departmentAddress ;
 	private String departmentCode ;

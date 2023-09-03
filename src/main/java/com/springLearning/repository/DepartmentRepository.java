@@ -6,4 +6,5 @@ import com.springLearning.entity.Department;
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long>{
 
+	Department findByDepartmentName(String departmentName);
 }
